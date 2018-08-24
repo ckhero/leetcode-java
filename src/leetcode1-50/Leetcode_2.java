@@ -11,8 +11,8 @@ public class Leetcode_2 {
     public static void main(String []args)
     {
         Leetcode_2 leetcode_2 = new Leetcode_2();
-        ListNode l1 = leetcode_2.getListNode(new int[] {1,2,3});
-        ListNode l2 = leetcode_2.getListNode(new int[] {1,2,7});
+        ListNode l1 = leetcode_2.getListNode(new int[] {1,8});
+        ListNode l2 = leetcode_2.getListNode(new int[] {0});
         ListNode aa = leetcode_2.addTwoNumbers(l1, l2);
         System.out.println(aa.val);
         System.out.println(aa.next.val);
@@ -41,8 +41,8 @@ public class Leetcode_2 {
             carry = sum / 10;
             curr.next = new ListNode(sum % 10);
             curr = curr.next;
-            q = q.next;
-            p = p.next;
+            if (q != null) q = q.next;
+            if (p != null) p = p.next;
         }
         if (carry > 0) {
             curr .next = new ListNode(carry);
